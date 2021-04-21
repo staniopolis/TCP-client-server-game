@@ -29,10 +29,10 @@ class PlayerSession(connection: ActorRef,
     case Received(data) =>
       commandHandler ! deSerialise(data)
     case hand: Hand =>
-      connection ! Write(ByteString(serialise(hand)))
+      connection ! Write(serialise(hand))
       context.become(gameInProgress(sender()))
     case msg: Msg =>
-      connection ! Write(ByteString(serialise(msg)))
+      connection ! Write(serialise(msg))
     case PeerClosed =>
       lobbyRoom ! PlayerDisconnected(self)
       log.info(s"Peer closed. Terminating session")
@@ -43,10 +43,10 @@ class PlayerSession(connection: ActorRef,
     case Received(data) =>
       gameSession ! deSerialise(data)
     case msg: GameEnded =>
-      connection ! Write(ByteString(serialise(msg)))
+      connection ! Write(serialise(msg))
       context.become(receive)
     case msg: Msg =>
-      connection ! Write(ByteString(serialise(msg)))
+      connection ! Write(serialise(msg))
     case PeerClosed =>
       lobbyRoom ! PlayerDisconnected(self)
       log.info(s"Peer closed. Terminating session")
