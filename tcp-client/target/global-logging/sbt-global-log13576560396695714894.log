@@ -1,0 +1,12 @@
+[debug] > Exec(compile, None, None)
+[debug] Evaluating tasks: Compile / compile
+[debug] Running task... Cancel: Signal, check cycles: false, forcegc: true
+[info] compiling 6 Scala sources to D:\Scala\Projects\tcp-client\target\scala-2.12\classes ...
+[warn] D:\Scala\Projects\tcp-client\src\main\scala\com\soni\client\TcpClient.scala:8:24: imported `Serialization' is permanently hidden by definition of trait Serialization in package client
+[warn] import com.soni.client.Serialization
+[warn]                        ^
+[warn] one warning found
+[info] done compiling
+[debug] Forcing garbage collection...
+[success] Total time: 6 s, completed 8 апр. 2021 г., 16:56:01
+[debug] > Exec(idea-shell, None, None)

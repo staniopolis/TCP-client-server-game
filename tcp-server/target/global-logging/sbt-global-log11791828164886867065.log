@@ -1,0 +1,18 @@
+[debug] > Exec(test, None, None)
+[debug] Evaluating tasks: Test / test
+[debug] Running task... Cancel: Signal, check cycles: false, forcegc: true
+[info] compiling 1 Scala source to D:\Scala\Projects\tcp-server\target\scala-2.12\test-classes ...
+[error] D:\Scala\Projects\tcp-server\src\test\scala\by\stascala\sevices\AuthenticationSpec.scala:31:3: macro implementation not found: here
+[error] (the most common reason for that is that you cannot use macro implementations in the same compilation run that defines them)
+[error]   "An Echo actor" must {
+[error]   ^
+[error] D:\Scala\Projects\tcp-server\src\test\scala\by\stascala\sevices\AuthenticationSpec.scala:31:19: value must is not a member of String
+[error]   "An Echo actor" must {
+[error]                   ^
+[error] D:\Scala\Projects\tcp-server\src\test\scala\by\stascala\sevices\AuthenticationSpec.scala:33:36: could not find implicit value for parameter pos: org.scalactic.source.Position
+[error]     "send back messages unchanged" in {
+[error]                                    ^
+[error] three errors found
+[error] (Test / compileIncremental) Compilation failed
+[error] Total time: 0 s, completed 21 апр. 2021 г., 10:54:18
+[debug] > Exec(idea-shell, None, None)

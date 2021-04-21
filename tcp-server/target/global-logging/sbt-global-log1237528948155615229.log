@@ -1,0 +1,7 @@
+[debug] > Exec(run, None, None)
+[debug] Evaluating tasks: Compile / run
+[debug] Running task... Cancel: Signal, check cycles: false, forcegc: true
+[info] compiling 3 Scala sources to D:\Scala\Projects\tcp-server\target\scala-2.12\classes ...
+[info] Non-compiled module 'compiler-bridge_2.12' for Scala 2.12.5. Compiling...
+[info]   Compilation completed in 12.775s.
+[info] done compiling

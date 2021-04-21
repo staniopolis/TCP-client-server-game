@@ -1,0 +1,9 @@
+[debug] > Exec(run, None, None)
+[debug] Evaluating tasks: Compile / run
+[debug] Running task... Cancel: Signal, check cycles: false, forcegc: true
+[info] compiling 1 Scala source to D:\Scala\Projects\tcp-client\target\scala-2.12\classes ...
+[info] done compiling
+[success] Total time: 62 s (01:02), completed 19 апр. 2021 г., 17:21:13
+[debug] > Exec(idea-shell, None, None)
+[debug] > Exec(, None, None)
+[debug] > Exec(idea-shell, None, None)

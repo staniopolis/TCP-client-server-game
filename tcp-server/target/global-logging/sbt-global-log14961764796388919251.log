@@ -1,0 +1,103 @@
+[debug] > Exec(early(addDefaultCommands), None, None)
+[debug] > Exec(addDefaultCommands, None, None)
+[debug] > Exec(early(initialize), None, None)
+[debug] > Exec(initialize, None, None)
+[debug] > Exec(early(addPluginSbtFile="""C:\Users\stani\AppData\Local\Temp\idea1.sbt"""), None, None)
+[debug] > Exec(addPluginSbtFile="""C:\Users\stani\AppData\Local\Temp\idea1.sbt""", None, None)
+[debug] > Exec(boot, None, None)
+[debug] > Exec(writeSbtVersion, None, None)
+[debug] > Exec(reload, None, None)
+[debug] > Exec(sbtStashOnFailure, None, None)
+[debug] > Exec(onFailure loadFailed, None, None)
+[debug] > Exec(loadp, None, None)
+[info] welcome to sbt 1.4.4 (AdoptOpenJDK Java 11.0.10)
+[debug]       Load.loadUnit: plugins took 86.0427ms
+[debug]       Load.loadUnit: defsScala took 0.2247ms
+[debug] [Loading] Scanning directory C:\Users\stani\.sbt\1.0\plugins
+[debug] [Loading] Found non-root projects 
+[debug] [Loading] Done in C:\Users\stani\.sbt\1.0\plugins, returning: ()
+[debug] deducing auto plugins based on known facts Set(Atom(sbt.plugins.CorePlugin)) and clauses Clauses(List(Clause(Atom(sbt.plugins.JvmPlugin),Set(Atom(sbt.plugins.IvyPlugin))), Clause(Atom(sbt.ScriptedPlugin),Set(Atom(sbt.plugins.JvmPlugin))), Clause(Atom(sbt.plugins.SbtPlugin),Set(Atom(sbt.ScriptedPlugin))), Clause(Atom(sbt.plugins.SemanticdbPlugin),Set(Atom(sbt.plugins.JvmPlugin))), Clause(Atom(sbt.plugins.JUnitXmlReportPlugin),Set(Atom(sbt.plugins.JvmPlugin))), Clause(Atom(sbt.plugins.MiniDependencyTreePlugin),Set(Atom(sbt.plugins.JvmPlugin))), Clause(Atom(sbt.plugins.CorePlugin),Set(Atom(sbt.plugins.IvyPlugin))), Clause(Atom(sbt.plugins.IvyPlugin),Set(Atom(sbt.plugins.JvmPlugin))), Clause(Atom(sbt.plugins.JvmPlugin),Set(Atom(sbt.plugins.SemanticdbPlugin))), Clause(Atom(sbt.plugins.JvmPlugin),Set(Atom(sbt.plugins.JUnitXmlReportPlugin))), Clause(Atom(sbt.plugins.CorePlugin),Set(Atom(sbt.plugins.Giter8TemplatePlugin))), Clause(Atom(sbt.plugins.JvmPlugin),Set(Atom(sbt.plugins.MiniDependencyTreePlugin)))))
+[debug]   :: deduced result: Matched(sbt.plugins.CorePlugin,sbt.plugins.Giter8TemplatePlugin,sbt.plugins.IvyPlugin,sbt.plugins.JvmPlugin,sbt.plugins.MiniDependencyTreePlugin,sbt.plugins.JUnitXmlReportPlugin,sbt.plugins.SemanticdbPlugin)
+[debug] Plugins.deducer#function took 16.3013 ms
+[debug]           Load.resolveProject(global-plugins) took 44.3078ms
+[debug]         Load.loadTransitive: finalizeProject(Project(id global-plugins, base: C:\Users\stani\.sbt\1.0\plugins, plugins: List(<none>))) took 82.9456ms
+[debug] [Loading] Done in C:\Users\stani\.sbt\1.0\plugins, returning: (global-plugins)
+[debug]       Load.loadUnit: loadedProjectsRaw took 98.6055ms
+[debug]       Load.loadUnit: cleanEvalClasses took 0.1963ms
+[debug]     Load.loadUnit(file:/C:/Users/stani/.sbt/1.0/plugins/, ...) took 191.5936ms
+[debug]   Load.apply: load took 339.8642ms
+[debug]   Load.apply: resolveProjects took 4.8419ms
+[debug]   Load.apply: finalTransforms took 55.6741ms
+[debug]   Load.apply: config.delegates took 6.6197ms
+[debug]   Load.apply: Def.make(settings)... took 728.0127ms
+[debug]   Load.apply: structureIndex took 88.3033ms
+[debug]   Load.apply: mkStreams took 1.486ms
+[info] loading global plugins from C:\Users\stani\.sbt\1.0\plugins
+[debug] Running task... Cancel: Signal, check cycles: false, forcegc: true
+[debug] Load.defaultLoad until apply took 2617.0568ms
+[debug]           Load.loadUnit: plugins took 24.6767ms
+[debug]           Load.loadUnit: defsScala took 0.0032ms
+[debug] [Loading] Scanning directory D:\Scala\Projects\tcp-server\project
+[debug]             Load.loadUnit: mkEval took 5.9882ms
+[debug] [Loading] Found non-root projects 
+[debug] [Loading] Done in D:\Scala\Projects\tcp-server\project, returning: ()
+[debug] deducing auto plugins based on known facts Set(Atom(sbt.plugins.CorePlugin)) and clauses Clauses(List(Clause(Atom(sbt.plugins.JvmPlugin),Set(Atom(sbt.plugins.IvyPlugin))), Clause(Atom(sbt.ScriptedPlugin),Set(Atom(sbt.plugins.JvmPlugin))), Clause(Atom(sbt.plugins.SbtPlugin),Set(Atom(sbt.ScriptedPlugin))), Clause(Atom(sbt.plugins.SemanticdbPlugin),Set(Atom(sbt.plugins.JvmPlugin))), Clause(Atom(sbt.plugins.JUnitXmlReportPlugin),Set(Atom(sbt.plugins.JvmPlugin))), Clause(Atom(sbt.plugins.MiniDependencyTreePlugin),Set(Atom(sbt.plugins.JvmPlugin))), Clause(Atom(sbt.plugins.CorePlugin),Set(Atom(sbt.plugins.IvyPlugin))), Clause(Atom(sbt.plugins.IvyPlugin),Set(Atom(sbt.plugins.JvmPlugin))), Clause(Atom(sbt.plugins.JvmPlugin),Set(Atom(sbt.plugins.SemanticdbPlugin))), Clause(Atom(sbt.plugins.JvmPlugin),Set(Atom(sbt.plugins.JUnitXmlReportPlugin))), Clause(Atom(sbt.plugins.CorePlugin),Set(Atom(sbt.plugins.Giter8TemplatePlugin))), Clause(Atom(sbt.plugins.JvmPlugin),Set(Atom(sbt.plugins.MiniDependencyTreePlugin)))))
+[debug]   :: deduced result: Matched(sbt.plugins.CorePlugin,sbt.plugins.Giter8TemplatePlugin,sbt.plugins.IvyPlugin,sbt.plugins.JvmPlugin,sbt.plugins.MiniDependencyTreePlugin,sbt.plugins.JUnitXmlReportPlugin,sbt.plugins.SemanticdbPlugin)
+[debug] Plugins.deducer#function took 1.3626 ms
+[info] loading settings for project tcp-server-build from plugins.sbt,idea1.sbt ...
+[debug]               Load.resolveProject(tcp-server-build) took 2.65ms
+[debug]             Load.loadTransitive: finalizeProject(Project(id tcp-server-build, base: D:\Scala\Projects\tcp-server\project, plugins: List(<none>))) took 4.5138ms
+[debug] [Loading] Done in D:\Scala\Projects\tcp-server\project, returning: (tcp-server-build)
+[debug]           Load.loadUnit: loadedProjectsRaw took 2080.1593ms
+[debug]           Load.loadUnit: cleanEvalClasses took 4.1767ms
+[debug]         Load.loadUnit(file:/D:/Scala/Projects/tcp-server/project/, ...) took 2109.9145ms
+[debug]       Load.apply: load took 2111.0703ms
+[debug]       Load.apply: resolveProjects took 0.1272ms
+[debug]       Load.apply: finalTransforms took 8.6675ms
+[debug]       Load.apply: config.delegates took 0.3243ms
+[debug]       Load.apply: Def.make(settings)... took 64.8636ms
+[debug]       Load.apply: structureIndex took 24.1832ms
+[debug]       Load.apply: mkStreams took 0.0029ms
+[info] loading project definition from D:\Scala\Projects\tcp-server\project
+[debug] Running task... Cancel: Signal, check cycles: false, forcegc: true
+[debug]     Load.loadUnit: plugins took 3253.0198ms
+[debug]     Load.loadUnit: defsScala took 0.0028ms
+[debug] [Loading] Scanning directory D:\Scala\Projects\tcp-server
+[debug]       Load.loadUnit: mkEval took 0.2322ms
+[debug] [Loading] Found non-root projects 
+[debug] [Loading] Done in D:\Scala\Projects\tcp-server, returning: ()
+[debug] deducing auto plugins based on known facts Set(Atom(sbt.plugins.CorePlugin)) and clauses Clauses(List(Clause(Atom(sbt.plugins.JvmPlugin),Set(Atom(sbt.plugins.IvyPlugin))), Clause(Atom(sbt.ScriptedPlugin),Set(Atom(sbt.plugins.JvmPlugin))), Clause(Atom(sbt.plugins.SbtPlugin),Set(Atom(sbt.ScriptedPlugin))), Clause(Atom(sbt.plugins.SemanticdbPlugin),Set(Atom(sbt.plugins.JvmPlugin))), Clause(Atom(sbt.plugins.JUnitXmlReportPlugin),Set(Atom(sbt.plugins.JvmPlugin))), Clause(Atom(sbt.plugins.MiniDependencyTreePlugin),Set(Atom(sbt.plugins.JvmPlugin))), Clause(Atom(com.typesafe.sbteclipse.plugin.EclipsePlugin),Set(Atom(sbt.plugins.JvmPlugin))), Clause(Atom(org.jetbrains.sbt.StructurePlugin),Set(Atom(sbt.plugins.JvmPlugin))), Clause(Atom(org.jetbrains.sbt.IdeaShellPlugin),Set(Atom(sbt.plugins.JvmPlugin))), Clause(Atom(org.jetbrains.sbt.indices.SbtIntellijIndicesPlugin),Set(Atom(sbt.plugins.JvmPlugin))), Clause(Atom(sbt.plugins.CorePlugin),Set(Atom(sbt.plugins.IvyPlugin))), Clause(Atom(sbt.plugins.IvyPlugin),Set(Atom(sbt.plugins.JvmPlugin))), Clause(Atom(sbt.plugins.JvmPlugin),Set(Atom(sbt.plugins.SemanticdbPlugin))), Clause(Atom(sbt.plugins.JvmPlugin),Set(Atom(sbt.plugins.JUnitXmlReportPlugin))), Clause(Atom(sbt.plugins.CorePlugin),Set(Atom(sbt.plugins.Giter8TemplatePlugin))), Clause(Atom(sbt.plugins.JvmPlugin),Set(Atom(sbt.plugins.MiniDependencyTreePlugin))), Clause(Atom(sbt.plugins.JvmPlugin),Set(Atom(com.typesafe.sbteclipse.plugin.EclipsePlugin))), Clause(Atom(sbt.plugins.JvmPlugin),Set(Atom(org.jetbrains.sbt.StructurePlugin))), Clause(Atom(sbt.plugins.JvmPlugin),Set(Atom(org.jetbrains.sbt.IdeaShellPlugin))), Clause(And(Set(Atom(sbt.plugins.CorePlugin), Atom(sbt.plugins.JvmPlugin))),Set(Atom(org.jetbrains.sbt.indices.SbtIntellijIndicesPlugin)))))
+[debug]   :: deduced result: Matched(sbt.plugins.CorePlugin,sbt.plugins.Giter8TemplatePlugin,sbt.plugins.IvyPlugin,sbt.plugins.JvmPlugin,com.typesafe.sbteclipse.plugin.EclipsePlugin,sbt.plugins.SemanticdbPlugin,org.jetbrains.sbt.indices.SbtIntellijIndicesPlugin,sbt.plugins.JUnitXmlReportPlugin,org.jetbrains.sbt.IdeaShellPlugin,org.jetbrains.sbt.StructurePlugin,sbt.plugins.MiniDependencyTreePlugin)
+[debug] Plugins.deducer#function took 2.0548 ms
+[info] loading settings for project tcp-server from build.sbt ...
+[debug]         Load.resolveProject(tcp-server) took 30.7656ms
+[debug]       Load.loadTransitive: finalizeProject(Project(id tcp-server, base: D:\Scala\Projects\tcp-server, plugins: List(<none>))) took 34.1091ms
+[debug] [Loading] Done in D:\Scala\Projects\tcp-server, returning: (tcp-server)
+[debug]     Load.loadUnit: loadedProjectsRaw took 1129.5435ms
+[debug]     Load.loadUnit: cleanEvalClasses took 13.398ms
+[debug]   Load.loadUnit(file:/D:/Scala/Projects/tcp-server/, ...) took 4396.5865ms
+[debug] Load.apply: load took 4397.8864ms
+[debug] Load.apply: resolveProjects took 0.0852ms
+[debug] Load.apply: finalTransforms took 21.8302ms
+[debug] Load.apply: config.delegates took 0.2846ms
+[debug] Load.apply: Def.make(settings)... took 69.1789ms
+[debug] Load.apply: structureIndex took 26.2197ms
+[debug] Load.apply: mkStreams took 0.0031ms
+[info] set current project to tcp-server (in build file:/D:/Scala/Projects/tcp-server/)
+[debug] > Exec(sbtPopOnFailure, None, None)
+[debug] > Exec(resumeFromFailure, None, None)
+[debug] > Exec(notifyUsersAboutShell, None, None)
+[debug] > Exec(iflast shell, None, None)
+[debug] > Exec(; set ideaPort in Global := 51271 ; idea-shell, None, None)
+[debug] > Exec(set ideaPort in Global := 51271, None, None)
+[info] Defining Global / ideaPort
+[info] The new value will be used by Compile / compile, Test / compile
+[debug] Defining 
+[debug] 	Global / ideaPort
+[debug] 
+[debug] The new value will be used by 
+[debug] 	Compile / compile
+[debug] 	Test / compile
+[info] Reapplying settings...
+[info] set current project to tcp-server (in build file:/D:/Scala/Projects/tcp-server/)
+[debug] > Exec(idea-shell, None, None)

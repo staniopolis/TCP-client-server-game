@@ -1,0 +1,9 @@
+[debug] > Exec(run, None, None)
+[debug] Evaluating tasks: Compile / run
+[debug] Running task... Cancel: Signal, check cycles: false, forcegc: true
+[info] compiling 1 Scala source to D:\Scala\Projects\tcp-server\target\scala-2.12\classes ...
+[warn] D:\Scala\Projects\tcp-server\src\main\scala\com\soni\handler\Session.scala:24:30: a pure expression does nothing in statement position
+[warn]         case GetBalance() => "100500"
+[warn]                              ^
+[warn] one warning found
+[info] done compiling

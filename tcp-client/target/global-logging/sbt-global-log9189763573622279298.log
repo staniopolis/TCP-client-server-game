@@ -1,0 +1,23 @@
+[debug] > Exec(run, None, None)
+[debug] Evaluating tasks: Compile / run
+[debug] Running task... Cancel: Signal, check cycles: false, forcegc: true
+[info] compiling 5 Scala sources to D:\Scala\Projects\tcp-client\target\scala-2.12\classes ...
+[error] D:\Scala\Projects\tcp-client\src\main\scala\by\stascala\client\TcpClient.scala:8:20: object actor is not a member of package by.stascala
+[error] import by.stascala.actor.ClientHandler.{ConnectionFailed, Exit, SessionClosed, Start}
+[error]                    ^
+[error] D:\Scala\Projects\tcp-client\src\main\scala\by\stascala\client\TcpClient.scala:30:18: not found: value ConnectionFailed
+[error]       listener ! ConnectionFailed(msg)
+[error]                  ^
+[error] D:\Scala\Projects\tcp-client\src\main\scala\by\stascala\client\TcpClient.scala:37:18: not found: value Start
+[error]       listener ! Start
+[error]                  ^
+[error] D:\Scala\Projects\tcp-client\src\main\scala\by\stascala\client\TcpClient.scala:48:10: not found: value Exit
+[error]     case Exit =>
+[error]          ^
+[error] D:\Scala\Projects\tcp-client\src\main\scala\by\stascala\client\TcpClient.scala:51:18: not found: value SessionClosed
+[error]       listener ! SessionClosed(if (closed.isErrorClosed) closed.getErrorCause else "no error")
+[error]                  ^
+[error] 5 errors found
+[error] (Compile / compileIncremental) Compilation failed
+[error] Total time: 4 s, completed 19 апр. 2021 г., 17:13:21
+[debug] > Exec(idea-shell, None, None)

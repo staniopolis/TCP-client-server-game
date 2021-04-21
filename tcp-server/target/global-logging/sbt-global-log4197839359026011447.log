@@ -1,0 +1,10 @@
+[debug] > Exec(run, None, None)
+[debug] Evaluating tasks: Compile / run
+[debug] Running task... Cancel: Signal, check cycles: false, forcegc: true
+[info] compiling 1 Scala source to D:\Scala\Projects\tcp-server\target\scala-2.12\classes ...
+[info] done compiling
+[debug] Forcing garbage collection...
+[error] Nonzero exit code: 1
+[error] (Compile / run) Nonzero exit code: 1
+[error] Total time: 1 s, completed 19 апр. 2021 г., 16:32:47
+[debug] > Exec(idea-shell, None, None)

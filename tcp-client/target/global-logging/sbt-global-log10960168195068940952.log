@@ -1,0 +1,7 @@
+[0m[[0m[0mdebug[0m] [0m[0m> Exec(run, Some(5b7135a8-55c4-4a22-879e-6fc6f9c220ad), Some(CommandSource(console0)))[0m
+[0m[[0m[0mdebug[0m] [0m[0mEvaluating tasks: Compile / run[0m
+[0m[[0m[0mdebug[0m] [0m[0mRunning task... Cancel: Signal, check cycles: false, forcegc: true[0m
+[0m[[0m[32msuccess[0m] [0m[0mTotal time: 119 s (01:59), completed 20 апр. 2021 г., 22:00:45[0m
+[0m[[0m[0mdebug[0m] [0m[0m> Exec(shell, None, None)[0m
+[0m[[0m[31merror[0m] [0m[0mserver failed to start on local:sbt-server-4c79e1d6f44fedc544c2. java.io.IOException: Could not create lock for \\.\pipe\sbt-server-4c79e1d6f44fedc544c2_lock, error 5[0m
+[0m[[0m[0mdebug[0m] [0m[0mForcing garbage collection...[0m

@@ -1,0 +1,4 @@
+[debug] Acquiring lock on file D:\Scala\Projects\tcp-server\project\target\.sbt-compilation-infos\tcp-server-compile\.sbt-idea-lock ...
+[warn] 1 deprecation (since 2.13.0); re-run with -deprecation for details
+[warn] one warning found
+[debug] Releasing lock on file D:\Scala\Projects\tcp-server\project\target\.sbt-compilation-infos\tcp-server-compile\.sbt-idea-lock.

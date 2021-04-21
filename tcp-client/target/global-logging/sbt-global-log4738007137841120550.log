@@ -1,0 +1,3 @@
+[0m[[0m[0mdebug[0m] [0m[0m> Exec(resumeFromFailure, None, None)[0m
+[0m[[0m[0mdebug[0m] [0m[0m> Exec(shell, None, None)[0m
+[0m[[0m[31merror[0m] [0m[0mserver failed to start on local:sbt-server-4c79e1d6f44fedc544c2. java.io.IOException: Could not create lock for \\.\pipe\sbt-server-4c79e1d6f44fedc544c2_lock, error 5[0m

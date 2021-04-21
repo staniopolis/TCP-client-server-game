@@ -1,0 +1,6 @@
+[0m[[0m[0mdebug[0m] [0m[0m> Exec(compile, Some(6379a3b5-b5fd-4525-b32b-a7447e3f9003), Some(CommandSource(console0)))[0m
+[0m[[0m[0mdebug[0m] [0m[0mEvaluating tasks: Compile / compile[0m
+[0m[[0m[0mdebug[0m] [0m[0mRunning task... Cancel: Signal, check cycles: false, forcegc: true[0m
+[0m[[0m[0minfo[0m] [0m[0mcompiling 2 Scala sources to D:\Scala\Projects\tcp-server\target\scala-2.12\classes ...[0m
+[0m[[0m[32msuccess[0m] [0m[0mTotal time: 6 s, completed 20 апр. 2021 г., 11:11:05[0m
+[0m[[0m[0mdebug[0m] [0m[0m> Exec(shell, None, None)[0m
