@@ -15,7 +15,7 @@ For each game type you can change:
 - ```numberOfPlayers``` <- the number of players required to start a game session
 - ```handSize``` <- the number of cards server deal at game start
 - ```foldCost``` <- the number of tokens that will be withdraw in case you fold your hand
-- ```playCost``` <- the number of tokens that will be withdraw or credited in case you loose or win the game session
+- ```playCost``` <- the number of tokens that will be withdraw or credited in case you lose or win the game session
 
 
 ## Run
