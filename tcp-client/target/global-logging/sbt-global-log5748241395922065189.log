@@ -1,8 +1,0 @@
-[debug] > Exec(rfgh, None, None)
-[error] Not a valid command: rfgh
-[error] Not a valid project ID: rfgh
-[error] Expected ':'
-[error] Not a valid key: rfgh (similar: fgRun)
-[error] rfgh
-[error]     ^
-[debug] > Exec(idea-shell, None, None)

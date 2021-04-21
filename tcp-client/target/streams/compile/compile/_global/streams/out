@@ -1,4 +1,0 @@
-[0m[[0m[33mwarn[0m] [0m[0mD:\Scala\Projects\EvolutionTestTask\tcp-client\src\main\scala\by\stascala\ClientHandler.scala:47:7: method with a single empty parameter list overrides method without any parameter list[0m
-[0m[[0m[33mwarn[0m] [0m[0m  def receive(): Receive = {[0m
-[0m[[0m[33mwarn[0m] [0m[0m      ^[0m
-[0m[[0m[33mwarn[0m] [0m[0mone warning found[0m

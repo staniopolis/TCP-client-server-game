@@ -1,4 +1,0 @@
-[0m[[0m[33mwarn[0m] [0m[0mD:\Scala\Projects\tcp-client\src\main\scala\com\soni\client\TcpClient.scala:8:24: imported `Serialization' is permanently hidden by definition of trait Serialization in package client[0m
-[0m[[0m[33mwarn[0m] [0m[0mimport com.soni.client.Serialization[0m
-[0m[[0m[33mwarn[0m] [0m[0m                       ^[0m
-[0m[[0m[33mwarn[0m] [0m[0mone warning found[0m
