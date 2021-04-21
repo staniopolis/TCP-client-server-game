@@ -1,6 +1,0 @@
-[0m[[0m[0mdebug[0m] [0m[0m[zinc] IncrementalCompile -----------[0m
-[0m[[0m[0mdebug[0m] [0m[0mIncrementalCompile.incrementalCompile[0m
-[0m[[0m[0mdebug[0m] [0m[0mprevious = Stamps for: 85 products, 10 sources, 3 libraries[0m
-[0m[[0m[0mdebug[0m] [0m[0mcurrent source = Set(${BASE}/src/main/scala/by/stascala/services/CommandHandler.scala, ${BASE}/src/main/scala/by/stascala/server/PlayerSession.scala, ${BASE}/src/main/scala/by/stascala/server/Serialization.scala, ${BASE}/src/main/scala/by/stascala/api/Msg.scala, ${BASE}/src/main/scala/by/stascala/GameSession.scala, ${BASE}/src/main/scala/by/stascala/services/LobbyRoom.scala, ${BASE}/src/main/scala/by/stascala/services/Persistent.scala, ${BASE}/src/main/scala/by/stascala/main/Main.scala, ${BASE}/src/main/scala/by/stascala/services/Authentication.scala, ${BASE}/src/main/scala/by/stascala/server/TcpServer.scala)[0m
-[0m[[0m[0mdebug[0m] [0m[0m> initialChanges = InitialChanges(Changes(added = Set(), removed = Set(), changed = Set(), unmodified = ...),Set(),Set(),API Changes: Set())[0m
-[0m[[0m[0mdebug[0m] [0m[0mNo changes[0m
