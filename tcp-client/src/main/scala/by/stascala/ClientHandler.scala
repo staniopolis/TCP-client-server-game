@@ -44,7 +44,7 @@ class ClientHandler extends Actor with Serialization with ActorLogging {
     'c' -> "Clubs",
     's' -> "Spades")
 
-  def receive(): Receive = {
+  def receive: Receive = {
     case Start => authHandler
     case ConnectionFailed(msg) =>
       log.info(msg + s", terminating ${this.getClass.getName} actor")
@@ -56,31 +56,32 @@ class ClientHandler extends Actor with Serialization with ActorLogging {
   }
 
   private def authHandler: Unit = {
-    println("\n"+
+    println("\n" +
+      "---------------------\n" +
       "Enter 1 to LogIn\n" +
-        "Enter 2 to SignUp\n" +
-        "Enter 3 to Exit\n" +
-        "-------------------------------------------------------\n")
+      "Enter 2 to SignUp\n" +
+      "Enter 3 to Exit\n"+
+      "---------------------\n"
+    )
     print("Enter your choice: ")
     val authOption = readLine()
     if (authOption.equals("3"))
       sender() ! Exit
-    else {
+    else if (authOption.equals("2") || authOption.equals("1")) {
       print("Please, enter your name: ")
       val playerName = readLine()
       context.become(authorized(playerName))
-
       print(s"Please, enter password: ")
       val password = readLine()
       val authData = (authOption, playerName, password)
       authData._1 match {
         case "1" => sender() ! LogIn(authData._2, authData._3)
         case "2" => sender() ! SingUp(authData._2, authData._3)
-        case _ =>
-          println(s"Wrong choice. Try again\n")
-          authHandler
-
       }
+    }
+    else {
+      println(s"Wrong choice. Try again\n")
+      authHandler
     }
   }
 
@@ -112,7 +113,7 @@ class ClientHandler extends Actor with Serialization with ActorLogging {
       println(s"You fold you cards and loose ($delta) tokens.\n" +
         s"You current balance: $balance tokens\n")
 
-    case Loss(strongestCard, balance, delta) =>
+    case Loss(_, balance, delta) =>
       println(s"You loose $delta tokens.\n" +
         s"Your current balance: $balance tokens\n")
 

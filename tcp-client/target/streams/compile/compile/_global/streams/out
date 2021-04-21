@@ -1,4 +1,4 @@
-[0m[[0m[31merror[0m] [0m[0mD:\Scala\Projects\tcp-client\src\main\scala\by\stascala\Main.scala:7:1: expected class or object definition[0m
-[0m[[0m[31merror[0m] [0m[0m1[0m
-[0m[[0m[31merror[0m] [0m[0m^[0m
-[0m[[0m[31merror[0m] [0m[0mone error found[0m
+[0m[[0m[33mwarn[0m] [0m[0mD:\Scala\Projects\EvolutionTestTask\tcp-client\src\main\scala\by\stascala\ClientHandler.scala:47:7: method with a single empty parameter list overrides method without any parameter list[0m
+[0m[[0m[33mwarn[0m] [0m[0m  def receive(): Receive = {[0m
+[0m[[0m[33mwarn[0m] [0m[0m      ^[0m
+[0m[[0m[33mwarn[0m] [0m[0mone warning found[0m
