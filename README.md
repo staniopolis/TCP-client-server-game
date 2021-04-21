@@ -20,8 +20,8 @@ For each game type you can change:
 
 ## Run
 
-1. Run sbt server from server-tcp project root directory and then ```run``` project in sbt shell. Or type ```sbt run``` from server-tcp project root directort in terminal
-2. For each player, run sbt server from client-tcp project root directory and then ```run``` project in sbt shell. Or type ```sbt run``` from client-tcp project root directort in terminal.
+1. Run sbt server from tcp-server project root directory and then ```run``` project in sbt shell. Or type ```sbt run``` from tcp-server project root directort in terminal
+2. For each player, run sbt client from tcp-client project root directory and then ```run``` project in sbt shell. Or type ```sbt run``` from tcp-client project root directort in terminal.
 
 ## Play
 
