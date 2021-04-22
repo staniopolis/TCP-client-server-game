@@ -4,10 +4,11 @@ import akka.actor.{Actor, ActorLogging, Props}
 import by.stascala.api._
 import by.stascala.client.Serialization
 
-import scala.io.StdIn.{readInt, readLine}
+import scala.annotation.tailrec
+import scala.io.StdIn.readLine
 
 object ClientHandler {
-  def props() =
+  def props(): Props =
     Props(new ClientHandler)
 
   final case class ConnectionFailed(failMsg: String)
@@ -45,7 +46,7 @@ class ClientHandler extends Actor with Serialization with ActorLogging {
     's' -> "Spades")
 
   def receive: Receive = {
-    case Start => authHandler
+    case Start => authHandler()
     case ConnectionFailed(msg) =>
       log.info(msg + s", terminating ${this.getClass.getName} actor")
       context.stop(self)
@@ -55,7 +56,8 @@ class ClientHandler extends Actor with Serialization with ActorLogging {
       context.system.terminate()
   }
 
-  private def authHandler: Unit = {
+  @tailrec
+  private def authHandler(): Unit = {
     println("\n" +
       "---------------------\n" +
       "Enter 1 to LogIn\n" +
@@ -63,16 +65,13 @@ class ClientHandler extends Actor with Serialization with ActorLogging {
       "Enter 3 to Exit\n"+
       "---------------------\n"
     )
-    print("Enter your choice: ")
-    val authOption = readLine()
+    val authOption = readLine("Enter your choice: ")
     if (authOption.equals("3"))
       sender() ! Exit
     else if (authOption.equals("2") || authOption.equals("1")) {
-      print("Please, enter your name: ")
-      val playerName = readLine()
+      val playerName = readLine("Please, enter your name: ")
       context.become(authorized(playerName))
-      print(s"Please, enter password: ")
-      val password = readLine()
+      val password = readLine("Please, enter password: ")
       val authData = (authOption, playerName, password)
       authData._1 match {
         case "1" => sender() ! LogIn(authData._2, authData._3)
@@ -81,7 +80,7 @@ class ClientHandler extends Actor with Serialization with ActorLogging {
     }
     else {
       println(s"Wrong choice. Try again\n")
-      authHandler
+      authHandler()
     }
   }
 
@@ -91,7 +90,7 @@ class ClientHandler extends Actor with Serialization with ActorLogging {
     case AuthFailed(msg) =>
       println(msg + "\n")
       println("Please make your choice:\n")
-      authHandler
+      authHandler()
     case CurrentBalance(balance) =>
       println(s"\nYou current balance is: $balance tokens\n")
       println("Please choose game type or exit:\n")
@@ -133,14 +132,14 @@ class ClientHandler extends Actor with Serialization with ActorLogging {
       context.system.terminate()
   }
 
+  @tailrec
   private def gameOptionHandler(playerName: String): Unit = {
     println(
       "Enter 1 to start Single card game\n" +
         "Enter 2 to start Double card game\n" +
         "Enter 3 start Other card game\n" +
         "Enter 4 to Exit\n")
-    print("Game type / exit: ")
-    val choice = readLine()
+    val choice = readLine("Game type / exit: ")
     choice match {
       case "1" => sender() ! JoinGame("single-card-game", playerName)
       case "2" => sender() ! JoinGame("double-card-game", playerName)
@@ -152,12 +151,12 @@ class ClientHandler extends Actor with Serialization with ActorLogging {
     }
   }
 
+  @tailrec
   private def gameSessionChoice(playerName: String): Unit = {
     println(
       "Enter 1 to Fold hand\n" +
         "Enter 2 to Play hand\n")
-    print("Your choice: ")
-    val choice = readLine()
+    val choice = readLine("Your choice: ")
     if (choice.equals("1") || choice.equals("2"))
       sender() ! PlayerDecision((playerName, choice.toInt))
     else {
