@@ -92,7 +92,7 @@ class ClientHandler extends Actor with Serialization with ActorLogging {
       println("Please make your choice:\n")
       authHandler()
     case CurrentBalance(balance) =>
-      println(s"\nYou current balance is: $balance tokens\n")
+      println(s"\nYour current balance is: $balance tokens\n")
       println("Please choose game type or exit:\n")
       gameOptionHandler(playerName)
     case Info(msg) =>

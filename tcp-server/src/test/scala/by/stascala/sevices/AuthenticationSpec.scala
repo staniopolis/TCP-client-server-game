@@ -39,6 +39,4 @@ class AuthenticationSpec extends TestKit(ActorSystem("MySpec"))
       expectMsg(CurrentBalance(900L))
     }
   }
-
-
 }

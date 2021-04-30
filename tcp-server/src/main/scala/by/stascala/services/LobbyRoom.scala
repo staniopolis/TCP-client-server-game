@@ -19,7 +19,11 @@ object LobbyRoom {
 
   final case class InsufficientTokens(balance: Long)
 
+  final case class InsufficientTokensResponse(balance: Long, playCost: Long, playerSession: ActorRef)
+
   final case object TokensHold
+
+  final case class TokensHold(gameOption: String, playerName: String, playerSession: ActorRef)
 }
 
 class LobbyRoom(persistent: ActorRef) extends Actor with ActorLogging {
@@ -36,42 +40,55 @@ class LobbyRoom(persistent: ActorRef) extends Actor with ActorLogging {
     case JoinGame(gameOption, playerName, playerSession) =>
       newGameRequestHandler(gameOption, playerName, playerSession)
     case PlayerDisconnected(playerSession) => playerDisconnectedHandler(playerSession)
+    case TokensHold(gameOption, playerName, playerSession) => handleBalanceResponse(gameOption, playerName, playerSession)
+    case InsufficientTokensResponse(balance, playCost, playerSession) => handleInsufficient(balance, playCost, playerSession)
+
   }
 
+
+  private def handleInsufficient(balance: Long, playCost: Long, playerSession: ActorRef) = {
+    playerSession ! Failed(s"Insufficient tokens. Balance must be over $playCost tokens." +
+      s" Current balance $balance tokens")
+  }
+
+  private def handleBalanceResponse(gameOption: String, playerName: String, playerSession: ActorRef) = {
+    val gameConfig = ConfigFactory.load("game.conf").getConfig(gameOption)
+    gameWaitList.get(gameOption) match {
+      case Some(_) =>
+        gameWaitList = gameWaitList.updated(gameOption, gameWaitList(gameOption) + (playerName -> playerSession))
+        // If number of players in wait list is enough to start game session, we start GameSession actor
+        if (gameWaitList(gameOption).size == gameConfig.getInt("numberOfPlayers")) {
+          gameWaitList(gameOption).foreach(player =>
+            player._2 ! Info(s"Staring $gameOption game session...\n"))
+          context.actorOf(GameSession.props(
+            gameWaitList(gameOption),
+            gameConfig.getInt("handSize"),
+            gameConfig.getLong("foldCost"),
+            gameConfig.getLong("playCost"),
+            persistent))
+          gameWaitList -= gameOption
+          // Else just inform player
+        } else {
+          playerSession ! Info(s"Waiting for other players...")
+        }
+      case None =>
+        gameWaitList += (gameOption -> Map(playerName -> playerSession))
+        playerSession ! Info(s"Waiting for other player(s)...")
+
+    }
+  }
 
   private def newGameRequestHandler(gameOption: String, playerName: String, playerSession: ActorRef): Unit = {
     // Load game config
     val gameConfig = ConfigFactory.load("game.conf").getConfig(gameOption)
     // Hold tokens
-    persistent ? Persistent.Hold(playerName, gameConfig.getLong("playCost")) onComplete {
+
+    (persistent ? Persistent.Hold(playerName, gameConfig.getLong("playCost"))) onComplete {
       case Success(result) => result match {
         case LobbyRoom.TokensHold =>
-          gameWaitList.get(gameOption) match {
-            case Some(_) =>
-              gameWaitList = gameWaitList.updated(gameOption, gameWaitList(gameOption) + (playerName -> playerSession))
-              // If number of players in wait list is enough to start game session, we start GameSession actor
-              if (gameWaitList(gameOption).size == gameConfig.getInt("numberOfPlayers")) {
-                gameWaitList(gameOption).foreach(player =>
-                  player._2 ! Info(s"Staring $gameOption game session...\n"))
-                context.actorOf(GameSession.props(
-                  gameWaitList(gameOption),
-                  gameConfig.getInt("handSize"),
-                  gameConfig.getLong("foldCost"),
-                  gameConfig.getLong("playCost"),
-                  persistent))
-                gameWaitList -= gameOption
-                // Else just inform player
-              } else {
-                playerSession ! Info(s"Waiting for other players...")
-              }
-            case None =>
-              gameWaitList += (gameOption -> Map(playerName -> playerSession))
-              playerSession ! Info(s"Waiting for other player(s)...")
-
-          }
+          self ! TokensHold(gameOption, playerName, playerSession)
         case InsufficientTokens(balance) =>
-          playerSession ! Failed(s"Insufficient tokens. Balance must be over ${gameConfig.getLong("playCost")} tokens." +
-            s" Current balance $balance tokens")
+          self ! InsufficientTokensResponse(balance, gameConfig.getLong("playCost"), playerSession)
       }
       case Failure(exception) => playerSession ! Failed(exception.getMessage)
     }

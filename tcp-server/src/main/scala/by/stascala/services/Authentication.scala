@@ -46,7 +46,6 @@ class Authentication(persistent: ActorRef) extends Actor with ActorLogging {
 
   private def logInHandler(playerName: String, password: String, playerSession: ActorRef): Unit = {
     if (authenticationData.contains(playerName) && authenticationData(playerName) == password) {
-//      playerSession ! AuthSuccess(s"Welcome back $playerName")
       (persistent ? Persistent.GetBalance(playerName)). mapTo[CurrentBalance] onComplete{
         case Success(result) => playerSession ! CurrentBalance(result.balance)
         case Failure(exception) => playerSession ! Failed(exception.getMessage)
