@@ -14,7 +14,7 @@ object Authentication {
 
   final case class LogIn(playerName: String, password: String, playerSession: ActorRef)
 
-  final case class SingUp(playerName: String, password: String, playerSession: ActorRef)
+  final case class SignUp(playerName: String, password: String, playerSession: ActorRef)
 }
 
 class Authentication(persistent: ActorRef) extends Actor with ActorLogging {
@@ -27,7 +27,7 @@ class Authentication(persistent: ActorRef) extends Actor with ActorLogging {
 
   override def receive: Receive = {
     case LogIn(playerName, password, playerSession) => logInHandler(playerName, password, playerSession)
-    case SingUp(playerName, password, playerSession) => singUpHandler(playerName, password, playerSession)
+    case SignUp(playerName, password, playerSession) => singUpHandler(playerName, password, playerSession)
   }
 
 

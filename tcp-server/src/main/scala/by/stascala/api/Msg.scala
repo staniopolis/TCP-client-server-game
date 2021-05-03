@@ -7,7 +7,7 @@ sealed trait GameEnded extends SrvMsg
 
 // ---------server-client messages-----------------------------
 case class LogIn(playerName: String, password: String) extends ClnMsg
-case class SingUp(playerName: String, password: String) extends ClnMsg
+case class SignUp(playerName: String, password: String) extends ClnMsg
 case class JoinGame(gameType: String, player: String) extends ClnMsg
 case class PlayerDecision(playerDecision: (String, Int)) extends ClnMsg
 

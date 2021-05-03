@@ -1,7 +1,7 @@
 package by.stascala.services
 
 import akka.actor.{Actor, ActorLogging, ActorRef, Props}
-import by.stascala.api.{Failed, JoinGame, LogIn, SingUp, Success}
+import by.stascala.api.{Failed, JoinGame, LogIn, SignUp, Success}
 
 object CommandHandler {
   def props(sessionActor: ActorRef, authActor: ActorRef, gameLobbyActor: ActorRef): Props =
@@ -14,8 +14,8 @@ class CommandHandler(playerSession: ActorRef, authentication: ActorRef, gameLobb
   override def receive: Receive = {
     case LogIn(playerName, password) =>
       authentication ! Authentication.LogIn(playerName, password, playerSession)
-    case SingUp(playerName, password) =>
-      authentication ! Authentication.SingUp(playerName, password, playerSession)
+    case SignUp(playerName, password) =>
+      authentication ! Authentication.SignUp(playerName, password, playerSession)
     case JoinGame(gameType, playerName) =>
       gameLobbyActor ! LobbyRoom.JoinGame(gameType, playerName, playerSession)
     case cmd: Failed =>

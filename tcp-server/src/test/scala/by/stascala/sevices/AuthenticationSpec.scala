@@ -4,7 +4,7 @@ import akka.actor.ActorSystem
 import akka.testkit.{ImplicitSender, TestActors, TestKit}
 import by.stascala.GameSession
 import by.stascala.api.CurrentBalance
-import by.stascala.services.Authentication.{LogIn, SingUp}
+import by.stascala.services.Authentication.{LogIn, SignUp}
 import by.stascala.services.LobbyRoom.TokensHold
 import by.stascala.services.Persistent.Hold
 import by.stascala.services.{Authentication, Persistent}
@@ -29,7 +29,7 @@ class AuthenticationSpec extends TestKit(ActorSystem("MySpec"))
   "Authentication actor" must {
 
     "receive initial balance" in {
-      testAuth ! SingUp("TestPlayer", "", testActor)
+      testAuth ! SignUp("TestPlayer", "", testActor)
       expectMsg(CurrentBalance(1000L))
     }
     "receive player's current balance" in {
