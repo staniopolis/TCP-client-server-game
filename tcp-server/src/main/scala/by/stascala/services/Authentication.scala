@@ -27,11 +27,11 @@ class Authentication(persistent: ActorRef) extends Actor with ActorLogging {
 
   override def receive: Receive = {
     case LogIn(playerName, password, playerSession) => logInHandler(playerName, password, playerSession)
-    case SignUp(playerName, password, playerSession) => singUpHandler(playerName, password, playerSession)
+    case SignUp(playerName, password, playerSession) => signUpHandler(playerName, password, playerSession)
   }
 
 
-  private def singUpHandler(playerName: String, password: String, playerSession: ActorRef): Unit = {
+  private def signUpHandler(playerName: String, password: String, playerSession: ActorRef): Unit = {
     if (authenticationData.contains(playerName))
       playerSession ! AuthFailed(s"Player with this name: $playerName already exist. Please choose another name or LogIn")
     else {
@@ -50,6 +50,6 @@ class Authentication(persistent: ActorRef) extends Actor with ActorLogging {
         case Success(result) => playerSession ! CurrentBalance(result.balance)
         case Failure(exception) => playerSession ! Failed(exception.getMessage)
       }
-    } else playerSession ! AuthFailed(s"Wrong login or password. Please try again or SingUp")
+    } else playerSession ! AuthFailed(s"Wrong login or password. Please try again or SignUp")
   }
 }
