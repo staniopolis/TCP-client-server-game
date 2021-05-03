@@ -1,7 +1,6 @@
 ## Important
 
-1. The project is still under construction (I would like to add test suites), but already applicable.
-2. This is my first time I develop both sides (client and server) of an application. In all Scala courses I have passed, I havn't encountered such assigment.
+1. This is my first time I develop both sides (client and server) of an application. In all Scala courses I have passed, I havn't encountered such assigment.
 3. Persistent implemented in form of actor state. It means, that in case you restart server, all persisted data will be lost.
 
 
